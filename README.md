@@ -1,5 +1,8 @@
 # django_docker_postgres
 
+Sample application using Django, PostgreSQL and Docker.
+Functionality: registration, authorization, CRUD for notes (private notes).
+
 ## Installation
 
 1) Clone this repository.
@@ -29,4 +32,4 @@ $ docker-compose -f docker-compose.yml up -d --build # build image
 $ docker-compose -f docker-compose.yml exec web python manage.py migrate # run migrations in "web" container
 ```
 
-4) Go: 127.0.0.1:8000
+4) Go: 127.0.0.1:8000.
