@@ -18,3 +18,15 @@ SQL_PASSWORD=notes_django
 SQL_HOST=db
 SQL_PORT=5432
 ```
+
+3) In terminal:
+
+```
+$ cd app
+$ docker build . # create an image
+$ cd ..
+$ docker-compose -f docker-compose.yml up -d --build # build image
+$ docker-compose -f docker-compose.yml exec web python manage.py migrate # run migrations in "web" container
+```
+
+4) Go: 127.0.0.1:8000
