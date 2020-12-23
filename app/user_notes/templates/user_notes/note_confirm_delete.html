@@ -1,0 +1,13 @@
+{% extends 'user_notes/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-4">
+        <form method="post">{% csrf_token %}
+            <p>Are you sure you want to delete "{{ object }}"?</p>
+            <button class="btn btn-secondary" type="submit">Yea!</button>
+            <button type="button" class="btn btn-secondary" onclick="window.history.back();">No No No</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
