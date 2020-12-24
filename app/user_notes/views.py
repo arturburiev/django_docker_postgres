@@ -13,6 +13,7 @@ class NotesListView(LoginRequiredMixin, ListView):
         user_notes = Note.objects.filter(author=self.request.user)
         return user_notes
 
+
 class AddNoteView(LoginRequiredMixin, CreateView):
     model = Note
     fields = ['title', 'text']
@@ -22,12 +23,12 @@ class AddNoteView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+
 class UpdateNoteView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Note
     fields = ['title', 'text']
     success_message = 'Note info has been updated! :)'
     success_url = '/'
-
 
     def test_func(self):
         if self.get_object().author == self.request.user:

@@ -13,7 +13,8 @@ class RegisterUser(CreateView):
     def get(self, request):
         if self.request.user.is_authenticated:
             return redirect('/')
-        return render(request, 'users/register-user.html', {'form': UserCreationForm()})
+        return render(request, 'users/register-user.html',
+                      {'form': UserCreationForm()})
 
     def post(self, request):
         form = UserCreationForm(request.POST)
